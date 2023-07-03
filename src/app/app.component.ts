@@ -1,6 +1,7 @@
 import { Component, EnvironmentInjector, inject } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,12 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   public environmentInjector = inject(EnvironmentInjector);
 
-  constructor() {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
+  openMenu(){
+    this.router.navigate(['/menu'], {relativeTo: this.route})
+  }
 }
