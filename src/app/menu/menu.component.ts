@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
   styleUrls: ['./menu.component.scss'],
   standalone: true,
   imports: [
-    IonicModule
+    IonicModule,
   ]
 })
 export class MenuComponent  implements OnInit {

@@ -1,14 +1,32 @@
 <div class="ion-page" id="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Menu</ion-title>
+  <ion-header [translucent]="true" class="app-header" #appHeader>
+    <ion-toolbar class="app-header-toolbar">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="1">
+            <ion-row class="ion-justify-content-start" style="margin-left: -10px;">
+              <ion-buttons>
+                <ion-menu-button></ion-menu-button>
+              </ion-buttons>
+            </ion-row>
+          </ion-col>
+          <ion-col size="9">
+            <ion-title>
+              <!-- <span style="color:rgb(33, 33, 168); font-weight: 700; font-size: 24px;">GetMe</span>
+              <span style="color:orange; font-weight: 700; font-size: 24px;">Hub</span> -->
+            </ion-title>
+          </ion-col>
+          <ion-col size="2">
+            <ion-row class="ion-justify-content-end">
+              <ion-icon name="notifications-outline" style="width: 28px; height:28px;"></ion-icon>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-toolbar>
   </ion-header>
+  <ion-router-outlet class="router-outlet"></ion-router-outlet>
 </div>
-
 
 <ion-menu contentId="main-content">
   <ion-header>
