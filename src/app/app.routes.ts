@@ -4,6 +4,10 @@ import { MenuComponent } from './menu/menu.component';
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.routes').then((m) => m.TabRoutes),
+    loadChildren: () => import('./menu/menu.routes').then((m) => m.MenuRoutes),
+  },
+  {
+    path: 'fruits-vegetables',
+    loadComponent: () => import('./fruits-vegetables/fruits-vegetables.component').then((c) => c.FruitsVegetablesComponent)
   },
 ];

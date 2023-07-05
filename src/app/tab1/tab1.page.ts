@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -10,7 +9,6 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [
     IonicModule,
-    ExploreContainerComponent,
     NgIf
   ],
 })

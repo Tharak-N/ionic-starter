@@ -13,13 +13,12 @@ import { MenuComponent } from './menu/menu.component';
 })
 export class AppComponent {
   public environmentInjector = inject(EnvironmentInjector);
+  private route = inject(Router);
+  private router = inject(ActivatedRoute)
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute
+    // private router: Router,
+    // private route: ActivatedRoute
   ) {}
 
-  openMenu(){
-    this.router.navigate(['/menu'], {relativeTo: this.route})
-  }
 }
