@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
+
+interface Shop {
+  label: string,
+  context: string,
+  icon: string,
+  routeUrl: string
+}
 
 @Component({
   selector: 'app-tab1',
@@ -9,15 +16,17 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [
     IonicModule,
-    NgIf
+    NgIf, NgFor
   ],
 })
 export class Tab1Page implements OnInit {
+  myShops: Array<Shop> = []
   showProgressStatus: boolean = true
   constructor() {}
 
   ngOnInit(): void {
-    this.showLoadingProgress()
+    // this.showLoadingProgress()
+    this.settingMyShops()
   }
 
   showLoadingProgress(){
@@ -25,4 +34,26 @@ export class Tab1Page implements OnInit {
       this.showProgressStatus = false
     }, 2000)
   }
+
+  settingMyShops(){
+    this.myShops.push(
+      {
+        label: 'GMH Restaurant',
+        context: 'Fine Multi cuisie Restaurant',
+        icon: 'fa-solid fa-star',
+        routeUrl: ''
+      },
+      {
+        label: 'Meghana Restaurant',
+        context: 'Non-Veg Restaurant',
+        icon: 'fa-solid fa-fish',
+        routeUrl: ''
+      }
+    )
+  }
+
+  navigationRoute(shop: Shop){
+
+  }
+
 }

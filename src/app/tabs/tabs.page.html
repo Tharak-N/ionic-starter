@@ -1,4 +1,4 @@
-<ion-tabs class="tab-navigation">
+<ion-tabs class="tab-navigation" (ionTabsWillChange)="onTabChange($event)" #ionTabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="my-shops">
       <i class="fa-solid fa-shop"></i>
