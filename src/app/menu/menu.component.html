@@ -5,8 +5,9 @@
         <ion-row class="ion-align-items-center">
           <ion-col size="1">
             <ion-row class="ion-justify-content-start" style="margin-left: -10px;">
-              <ion-buttons>
+              <ion-buttons class="ion-activatable ripple-parent circle">
                 <ion-menu-button></ion-menu-button>
+                <ion-ripple-effect type="unbounded" class="white-ripple"></ion-ripple-effect>
               </ion-buttons>
             </ion-row>
           </ion-col>
@@ -18,8 +19,11 @@
             </ion-title>
           </ion-col>
           <ion-col size="2">
-            <ion-row class="ion-justify-content-end">
-              <ion-icon name="notifications-outline" style="width: 24px; height:24px;" (click)="openNotification()"></ion-icon>
+            <ion-row class="ion-justify-content-center">
+              <div class="ion-activatable ripple-parent circle">
+                <ion-icon name="notifications-outline" style="width: 24px; height:24px;" (click)="openNotification()"></ion-icon>
+                <ion-ripple-effect type="unbounded" class="white-ripple"></ion-ripple-effect>
+              </div>
             </ion-row>
           </ion-col>
         </ion-row>

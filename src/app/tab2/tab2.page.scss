@@ -10,7 +10,7 @@
     box-shadow: none;
     // border: none;
     --bs-card-border-color:none;
-    border: 1px solid rgb(196, 196, 196);
+    border: var(--light-border-color);
     .notification-badge{
       position:fixed;
     }

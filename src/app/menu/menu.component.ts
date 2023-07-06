@@ -25,7 +25,9 @@ export class MenuComponent  implements OnInit {
   ngOnInit() {}
 
   openNotification(){
-    this.router.navigate(['/notifications'])
+    setTimeout(()=>{
+      this.router.navigate(['/notifications'])
+    }, 220)
     this.settingNotificationTransition()
   }
 
@@ -38,5 +40,6 @@ export class MenuComponent  implements OnInit {
     // // .fromTo('opacity', '0', '1');
     // animation.play()
   }
+
 
 }
