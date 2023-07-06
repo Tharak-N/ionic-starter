@@ -19,7 +19,7 @@ interface Shop {
   standalone: true,
   imports: [
     IonicModule,
-    NgIf, NgFor
+    NgIf, NgFor,
   ]
 })
 export class Tab2Page implements OnInit {

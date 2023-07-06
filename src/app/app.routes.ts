@@ -10,4 +10,8 @@ export const routes: Routes = [
     path: 'fruits-vegetables',
     loadComponent: () => import('./fruits-vegetables/fruits-vegetables.component').then((c) => c.FruitsVegetablesComponent)
   },
+  {
+    path: 'notifications',
+    loadComponent: () => import('./notifications/notifications.component').then((c) => c.NotificationsComponent)
+  }
 ];

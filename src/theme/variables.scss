@@ -74,6 +74,10 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /*Custom Setting Variables*/
+  --grey-color-text: grey;
+  --light-grey-bg-color: #dadada;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -232,5 +236,8 @@
     --ion-tab-bar-background: #1f1f1f;
 
     --ion-card-background: #1e1e1e;
+
+    /*Custom Setting Variables*/
+    --custom-item-background: #242424;
   }
 }

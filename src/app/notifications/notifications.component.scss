@@ -1,0 +1,67 @@
+.notification{
+  .notification-header{
+    .back-action {
+      justify-content: center;
+      display: flex;
+      .arrow-back{
+        transform: scale(1.35);
+      }
+    }
+  }
+}
+
+:host .ion-items {
+  border-radius: 12px;
+  margin: 10px;
+  @media(prefers-color-scheme: light){
+    // --ion-item-background: #ecf0ff;
+    // --ion-item-background: #E8EAF6;     // indigo
+    // --ion-item-background: #F5F5F5;      // gray setpper - 100
+    --ion-item-background: #ffffff;      // gray stepper - 200
+  }
+
+  @media(prefers-color-scheme: dark){
+    --ion-item-background: var(--custom-item-background);
+  }
+}
+
+:host .ion-label{
+  @media(prefers-color-scheme: light){
+    .notification-title{
+      font-size: 16px;
+      color: var(--ion-text-background);
+    }
+    .notification-context {
+      font-size: 11px;
+      color: var(--grey-color-text);
+    }
+  }
+
+  @media(prefers-color-scheme: dark){
+    .notification-title{
+      font-size: 16px;
+    }
+    .notification-context{
+      font-size: 11px;
+      font-weight: 300;
+    }
+  }
+}
+
+
+:host .ion-content{
+  --ion-background-color: var(--light-grey-bg-color);
+
+  @media(prefers-color-scheme: dark){
+    --ion-background-color: #121212;
+  }
+}
+
+:host .thumbnails {
+  width: 20px;
+  height: 30px;
+
+  // .notification-icons {
+  //   // transform: scale(1.35);
+  // }
+}

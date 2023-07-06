@@ -1,5 +1,5 @@
-<div class="ion-page" id="main-content">
-  <ion-header [translucent]="true" class="app-header ion-no-border" #appHeader>
+<div class="ion-page" id="main-content" #appHeader>
+  <ion-header [translucent]="true" class="app-header ion-no-border">
     <ion-toolbar class="app-header-toolbar">
       <ion-grid>
         <ion-row class="ion-align-items-center">
@@ -19,7 +19,7 @@
           </ion-col>
           <ion-col size="2">
             <ion-row class="ion-justify-content-end">
-              <ion-icon name="notifications-outline" style="width: 24px; height:24px;"></ion-icon>
+              <ion-icon name="notifications-outline" style="width: 24px; height:24px;" (click)="openNotification()"></ion-icon>
             </ion-row>
           </ion-col>
         </ion-row>

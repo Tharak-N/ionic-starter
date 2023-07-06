@@ -9,7 +9,9 @@ import { MenuComponent } from './menu/menu.component';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, MenuComponent],
+  imports: [IonicModule,
+    CommonModule, MenuComponent,
+  ],
 })
 export class AppComponent {
   public environmentInjector = inject(EnvironmentInjector);

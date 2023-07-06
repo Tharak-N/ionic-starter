@@ -1,0 +1,41 @@
+<div #notification class="notification">
+  <ion-header class="ion-no-border notification-header">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="2">
+            <div class="ion-activatable ripple-parent circle back-action">
+              <ion-icon name="arrow-back" class="arrow-back" (click)="navigateBack()"></ion-icon>
+              <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+            </div>
+          </ion-col>
+          <ion-col>
+            <ion-title style="padding:0px;">Notifications</ion-title>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+    <!-- <hr/> -->
+  </ion-header>
+  <ion-content [fullscreen]="true" class="ion-content p-0">
+      <ion-item
+        *ngFor="let notification of allNotifications"
+        lines="none"
+        class="ion-activatable ripple-parent ion-items mb-2"
+      >
+        <ion-thumbnail slot="start"
+          class="d-flex align-items-center thumbnails"
+        >
+          <i [class]="notification.icon"></i>
+          <ion-ripple-effect></ion-ripple-effect>
+        </ion-thumbnail>
+
+        <ion-label class="ion-label ion-text-wrap">
+          <p class="notification-title">{{ notification.title }}</p>
+          <p class="notification-context">{{ notification.context }}</p>
+        </ion-label>
+
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-item>
+  </ion-content>
+</div>
