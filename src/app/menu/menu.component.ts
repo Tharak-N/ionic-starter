@@ -4,6 +4,12 @@ import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core'
 import { Router } from '@angular/router';
 import { Animation, AnimationController, IonHeader, IonicModule } from '@ionic/angular';
 
+interface Menu {
+  label: string,
+  routeUrl: string,
+  icon: string,
+}
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -17,12 +23,61 @@ import { Animation, AnimationController, IonHeader, IonicModule } from '@ionic/a
 })
 export class MenuComponent  implements OnInit {
   @ViewChild('appHeader') appHeader!: ElementRef
+
+  menuOptions: Array<Menu> = [];
+  userName: string = '';
+  userLocation: string = '';
+
   private router = inject(Router);
   private animationControl = inject(AnimationController);
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userName = 'Tharak'
+    this.userLocation = 'T.Nagar, Chennai'
+    this.settingMenuOptions()
+  }
+
+  settingMenuOptions(){
+    this.menuOptions.push(
+      {
+        label: 'My Profile',
+        routeUrl: '',
+        icon: 'person'
+      },
+      {
+        label: 'Change Location',
+        routeUrl: '',
+        icon: 'location'
+      },
+      {
+        label: 'Pass Code',
+        routeUrl: '',
+        icon: 'finger-print'
+      },
+      {
+        label: 'Invite Friend',
+        routeUrl: '',
+        icon: 'mail'
+      },
+      {
+        label: 'Refer Shop',
+        routeUrl: '',
+        icon: 'share-social'
+      },
+      {
+        label: 'Feedback',
+        routeUrl: '',
+        icon: 'receipt'
+      },
+      {
+        label: 'About',
+        routeUrl: '',
+        icon: 'information-circle'
+      }
+    )
+  }
 
   openNotification(){
     setTimeout(()=>{

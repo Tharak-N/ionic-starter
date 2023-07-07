@@ -9,11 +9,17 @@
     margin-bottom: 0px;
     box-shadow: none;
     // border: none;
+    // --bs-card-height: 200px;
     --bs-card-border-color:none;
     border: var(--light-border-color);
     .notification-badge{
       position:fixed;
     }
+    // .card-image {
+    //   // width: 180px;
+    //   // height: 110px;
+    //   // object-fit: cover;
+    // }
 
     .badges {
       height: 25px;

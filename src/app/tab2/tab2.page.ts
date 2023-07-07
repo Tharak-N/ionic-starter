@@ -1,12 +1,14 @@
 import { Component, ElementRef, OnInit, Renderer2, TemplateRef, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { Animation, AnimationController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
 interface Shop {
   label: string,
   icon: string,
+  image: string,
+  loadBehaviour: any,
   context: string,
   routeUrl?: string,
   status: number
@@ -20,6 +22,8 @@ interface Shop {
   imports: [
     IonicModule,
     NgIf, NgFor,
+    NgOptimizedImage,
+
   ]
 })
 export class Tab2Page implements OnInit {
@@ -47,6 +51,9 @@ export class Tab2Page implements OnInit {
       {
         label:'Fruits & Vegetables',
         icon: 'fa-solid fa-leaf',
+        // image: 'https://img.freepik.com/free-photo/basket-full-vegetables_1112-316.jpg?w=1380&t=st=1688700449~exp=1688701049~hmac=1bad8e79d707b68871db2d71bf9471953ef1d3b57a8375ab1919946f18ada1ac',
+        image: '../../assets/images/fruits & vegetables.jpeg',
+        loadBehaviour: 'eager',
         context: 'Fresh Produce',
         routeUrl: '/fruits-vegetables',
         status: 2
@@ -54,6 +61,9 @@ export class Tab2Page implements OnInit {
       {
         label:'Poultry Meat Seafood',
         icon: 'fa-solid fa-fish',
+        // image: 'https://as1.ftcdn.net/v2/jpg/06/12/45/94/1000_F_612459430_KiW1iQDfGEMv8uSXVDsxUUSQ8MAHoSEx.jpg',
+        image: '../../assets/images/meat.jpg',
+        loadBehaviour: 'eager',
         context: 'Proteins',
         routeUrl: '/sea-food',
         status: 3
@@ -61,6 +71,8 @@ export class Tab2Page implements OnInit {
       {
         label:'Groceries',
         icon:'fa-solid fa-basket-shopping',
+        image: '../../assets/images/groceries.jpg',
+        loadBehaviour: 'lazy',
         context: 'Kiranas Super Markets',
         routeUrl: '/groceries',
         status: 0
@@ -68,6 +80,8 @@ export class Tab2Page implements OnInit {
       {
         label: 'Restaurants',
         icon: 'fa-solid fa-utensils',
+        image: '../../assets/images/restaurant.jpg',
+        loadBehaviour: 'lazy',
         context: 'All types of Cuisine around you',
         routeUrl: '/restaurant',
         status: 4
@@ -75,13 +89,17 @@ export class Tab2Page implements OnInit {
       {
         label: 'Home Made',
         icon: 'fa-solid fa-house-chimney',
-        context: 'All local flavours',
+        image: '../../assets/images/home-made.jpg',
+        loadBehaviour: 'lazy',
+        context: 'All local Home flavours',
         routeUrl: '/home-made',
         status: 3
       },
       {
         label: 'Sweets & Snacks',
         icon: 'fa-solid fa-cookie-bite',
+        image: '../../assets/images/snacks.jpg',
+        loadBehaviour: 'lazy',
         context: 'Local Eats',
         routeUrl: '/sweets-and-snacks',
         status: 8
@@ -89,13 +107,17 @@ export class Tab2Page implements OnInit {
       {
         label: 'Cakes & Ice cream',
         icon: 'fa-solid fa-ice-cream',
+        image: '../../assets/images/cakes.jpg',
+        loadBehaviour: 'lazy',
         context: 'Fresh bakes and desserts',
         routeUrl: '/cakes-and-icecreams',
         status: 2
       },
       {
-        label: 'Exclusive',
+        label: 'Exclusive Store',
         icon: 'fa-solid fa-store',
+        image: '',
+        loadBehaviour: 'lazy',
         context: 'Specialty food items & Pharmacies',
         routeUrl: '/exclusive',
         status: 0

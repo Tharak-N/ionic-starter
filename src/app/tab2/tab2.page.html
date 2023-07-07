@@ -14,20 +14,29 @@
           <ion-col *ngFor="let item of browseShopsList" (click)="navigationRoute(item)" size="6" class="shops">
             <ion-card class="card ion-activatable ripple-parent">
               <div class="d-flex justify-content-end">
-                <div class="notification-badge">
+                <!-- <div class="notification-badge">
                   <ion-badge *ngIf="item.status>0" class="badges">{{ item.status }}</ion-badge>
-                </div>
-                <img  alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>
+                </div> -->
+                <!-- <img  alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/> -->
+                <img
+                  [ngSrc]="item.image"
+                  class="card-image"
+                  width="auto"
+                  height="auto"
+                  ngSrcset="200w, 400w, 600w, 800w, 1000w, 1200w, 1600w, 2000w, 3000w"
+                  [loading]="item.loadBehaviour"
+                />
+                <!-- <img [src]="item.image" /> -->
               </div>
               <!-- <i [class]="item.icon"></i> -->
               <ion-card-header class="card-header">
                 <div class="d-flex justify-content-between">
                   <div>
                     <ion-card-title>{{ item.label }}</ion-card-title>
+                    <div style="width: 5px; height: 18px;">
+                      <ion-badge *ngIf="item.status>0">{{ item.status }}</ion-badge>
+                    </div>
                   </div>
-                  <!-- <div style="margin-left: 5px;">
-                    <ion-badge *ngIf="item.status>0">{{ item.status }}</ion-badge>
-                  </div> -->
                 </div>
                 <ion-card-subtitle>{{ item.context }}</ion-card-subtitle>
               </ion-card-header >
@@ -59,3 +68,6 @@
     </div>
 
   </ion-content>
+
+
+  <!-- <ng-template #emptyBadge><ion-badge></ion-badge></ng-template> -->

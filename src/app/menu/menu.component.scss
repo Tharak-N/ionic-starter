@@ -18,6 +18,17 @@
       font-size: 23px;
     }
   }
+
+  // #main-content{
+  //   .menu-toggle{
+  //     .menu-items{
+  //       .menu-label{
+  //         // margin-left: 20px;
+
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 
@@ -27,4 +38,9 @@
 
 .white-ripple{
   color: #ffffff;
+}
+
+
+:host .icons {
+  margin-inline: 0px 14px;
 }
