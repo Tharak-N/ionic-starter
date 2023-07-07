@@ -17,25 +17,40 @@
     </ion-toolbar>
     <!-- <hr/> -->
   </ion-header>
-  <ion-content [fullscreen]="true" class="ion-content p-0">
+    <ion-content *ngIf="isLoaded; else loadingSkeleton" [fullscreen]="true" class="ion-content p-0">
       <ion-item
-        *ngFor="let notification of allNotifications"
-        lines="none"
-        class="ion-activatable ripple-parent ion-items mb-2"
+      *ngFor="let notification of allNotifications"
+      lines="none"
+      class="ion-activatable ripple-parent ion-items mb-2"
       >
-        <ion-thumbnail slot="start"
-          class="d-flex align-items-center thumbnails"
-        >
-          <i [class]="notification.icon"></i>
-          <ion-ripple-effect></ion-ripple-effect>
-        </ion-thumbnail>
+      <ion-thumbnail slot="start"
+      class="d-flex align-items-center thumbnails"
+      >
+      <i [class]="notification.icon"></i>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-thumbnail>
 
-        <ion-label class="ion-label ion-text-wrap">
-          <p class="notification-title">{{ notification.title }}</p>
+    <ion-label class="ion-label ion-text-wrap">
+      <p class="notification-title">{{ notification.title }}</p>
           <p class="notification-context">{{ notification.context }}</p>
         </ion-label>
 
         <ion-ripple-effect></ion-ripple-effect>
       </ion-item>
-  </ion-content>
+    </ion-content>
 </div>
+
+<ng-template #loadingSkeleton>
+    <ion-content class="skeleton-content" [fullscreen]="true">
+        <ion-item *ngFor="let item of allNotifications; index as i">
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text [animated]="true" class="skeleton-thumbnail"></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <ion-skeleton-text [animated]="true" style="width: 85%;" class="skeleton-text"></ion-skeleton-text>
+            <ion-skeleton-text [animated]="true" style="width: 70%;" class="skeleton-text"></ion-skeleton-text>
+            <ion-skeleton-text [animated]="true" style="width: 30%;" class="skeleton-text"></ion-skeleton-text>
+          </ion-label>
+        </ion-item>
+    </ion-content>
+</ng-template>

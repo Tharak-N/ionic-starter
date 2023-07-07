@@ -66,3 +66,14 @@
   //   // transform: scale(1.35);
   // }
 }
+
+
+:host .skeleton-thumbnail {
+  border-radius: 50%;
+}
+
+:host .skeleton-text {
+  line-height: 12px;
+  --border-radius: 10px;
+  margin-top:10px;
+}

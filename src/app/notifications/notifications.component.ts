@@ -41,8 +41,10 @@ interface Notification {
   ]
 })
 export class NotificationsComponent  implements OnInit {
-  allNotifications: Array<Notification> = []
   @ViewChild('notification') notification!: ElementRef;
+
+  allNotifications: Array<Notification> = []
+  isLoaded: boolean = false;
 
   private router = inject(Router)
   private animationControl = inject(AnimationController)
@@ -52,6 +54,7 @@ export class NotificationsComponent  implements OnInit {
 
   ngOnInit() {
     // this.settingTransitions()
+    this.isLoaded = false
     this.settingNotifications()
   }
 
@@ -73,6 +76,9 @@ export class NotificationsComponent  implements OnInit {
         icon: 'fa-solid fa-car'
       }
     )
+    setTimeout(() => {
+      this.isLoaded = true
+    }, 2000)
   }
 
 
