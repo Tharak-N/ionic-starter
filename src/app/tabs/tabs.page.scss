@@ -18,3 +18,10 @@
     transform: scale(1.35);
   }
 }
+
+
+:host .tab-navigation {
+  @media(prefers-color-scheme: dark){
+    background-color: #121212;
+  }
+}

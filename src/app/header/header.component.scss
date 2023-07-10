@@ -1,0 +1,19 @@
+.header{
+  --ion-toolbar-background: var(--header-bg-color);
+  --ion-text-color: #ffffff;
+
+  @media (prefers-color-scheme: dark) {
+    --ion-toolbar-background: #5260ff;
+    --ion-text-color: #ffffff;
+  }
+
+  .header-toolbar{
+    .back-action {
+      justify-content: center;
+      display: flex;
+      .arrow-back{
+        transform: scale(1.35);
+      }
+    }
+  }
+}

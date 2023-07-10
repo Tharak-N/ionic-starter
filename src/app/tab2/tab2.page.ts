@@ -63,7 +63,7 @@ export class Tab2Page implements OnInit {
         icon: 'fa-solid fa-fish',
         // image: 'https://as1.ftcdn.net/v2/jpg/06/12/45/94/1000_F_612459430_KiW1iQDfGEMv8uSXVDsxUUSQ8MAHoSEx.jpg',
         image: '../../assets/images/meat.jpg',
-        loadBehaviour: 'eager',
+        loadBehaviour: 'lazy',
         context: 'Proteins',
         routeUrl: '/sea-food',
         status: 3

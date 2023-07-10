@@ -54,7 +54,7 @@
   </ion-header>
   <ion-content >
     <ion-menu-toggle *ngFor="let menu of menuOptions" class="ion-activatable ripple-parent menu-toggle">
-      <ion-item lines="none" class="menu-items">
+      <ion-item lines="full" class="menu-items" (click)="openMenu(menu.routeUrl)">
         <!-- <i [class]="menu.icon"></i> -->
         <ion-icon
           [name]="menu.icon"

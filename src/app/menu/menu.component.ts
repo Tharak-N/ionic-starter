@@ -43,37 +43,37 @@ export class MenuComponent  implements OnInit {
     this.menuOptions.push(
       {
         label: 'My Profile',
-        routeUrl: '',
+        routeUrl: '/user-profile',
         icon: 'person'
       },
       {
         label: 'Change Location',
-        routeUrl: '',
+        routeUrl: '/dev-preview',
         icon: 'location'
       },
       {
         label: 'Pass Code',
-        routeUrl: '',
+        routeUrl: '/dev-preview',
         icon: 'finger-print'
       },
       {
         label: 'Invite Friend',
-        routeUrl: '',
+        routeUrl: '/dev-preview',
         icon: 'mail'
       },
       {
         label: 'Refer Shop',
-        routeUrl: '',
+        routeUrl: '/dev-preview',
         icon: 'share-social'
       },
       {
         label: 'Feedback',
-        routeUrl: '',
+        routeUrl: '/dev-preview',
         icon: 'receipt'
       },
       {
         label: 'About',
-        routeUrl: '',
+        routeUrl: '/dev-preview',
         icon: 'information-circle'
       }
     )
@@ -94,6 +94,10 @@ export class MenuComponent  implements OnInit {
     // .easing('easing-in-out')
     // // .fromTo('opacity', '0', '1');
     // animation.play()
+  }
+
+  openMenu(routeUrl: string) {
+    this.router.navigate([routeUrl])
   }
 
 

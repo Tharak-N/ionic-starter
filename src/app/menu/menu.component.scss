@@ -44,3 +44,9 @@
 :host .icons {
   margin-inline: 0px 14px;
 }
+
+:host .menu-toggle{
+  @media(prefers-color-scheme: dark){
+    --ion-item-background: var(--ion-background-color);
+  }
+}

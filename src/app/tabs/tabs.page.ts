@@ -35,7 +35,7 @@ export class TabsPage implements AfterViewInit{
     .iterations(1)
     .fromTo('transform',
       'translateX(100%)',
-      'translateX(0)'
+      'translateX(0%)'
     )
     .easing('ease-in-out')
     .fromTo(
