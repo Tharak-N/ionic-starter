@@ -9,7 +9,7 @@
 
     <ion-list [inset]="true" class="user-profile-list">
       <ion-item-group class="profile-group">
-        <ion-item-divider lines="none" class="profile-divider" color="default">
+        <ion-item-divider lines="none" class="profile-divider">
           <ion-title class="profile-title">Profile Info</ion-title>
           <!-- <ion-label>Profile Info</ion-label> -->
         </ion-item-divider>
@@ -35,33 +35,36 @@
 
     <ion-list [inset]="true" class="user-address-section">
       <ion-item-group class="address-group">
-        <ion-item-divider lines="none" class="address-divider" color="light">
-          <div class="d-flex flex-row justify-content-end align-items-center">
+        <ion-item-divider lines="none" class="address-divider">
             <ion-title class="address-title">Your Address</ion-title>
-          </div>
         </ion-item-divider>
 
-        <ion-item class="address-item mt-3" lines="" *ngFor="let address of userAddresses">
-          <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-            <div style="width: 80%;">
-              <ion-label class="address-label ion-text-wrap">{{ address.address }}</ion-label>
+        <ion-item class="address-item mt-3" lines="none" *ngFor="let address of userAddresses">
+            <div class="d-flex flex-row justify-content-between" style="width: 100%;">
+                <div  style="width: 20%;">
+                  <ion-radio></ion-radio>
+                </div>
+                <div style="width: 95%;">
+                  <ion-label class="address-label ion-text-wrap">{{ address.address }}</ion-label>
+                  <div>
+                    <ion-button class="tertiary mt-1" size="small"><ion-icon name="create-outline" style="margin-right: 6px;"></ion-icon>Edit</ion-button>
+                  </div>
+                </div>
             </div>
-            <div>
-              <ion-checkbox></ion-checkbox>
-            </div>
-          </div>
         </ion-item>
 
-        <ion-button class="primary mt-3" size="small"><ion-icon name="add" style="margin-right: 6px;"></ion-icon>Add</ion-button>
-        <ion-button class="tertiary mt-3" size="small"><ion-icon name="create-outline" style="margin-right: 6px;"></ion-icon>Edit</ion-button>
-        <ion-button class="danger mt-3" size="small"><ion-icon name="trash-outline" style="margin-right: 6px;"></ion-icon>Delete</ion-button>
+        <!-- <ion-button class="primary mt-3" size="small"><ion-icon name="add" style="margin-right: 6px;"></ion-icon>Add</ion-button> -->
+        <ion-item lines="full" detail="true" class="mt-2">
+          <ion-label>Add Address</ion-label>
+        </ion-item>
+        <!-- <ion-button class="danger mt-3" size="small"><ion-icon name="trash-outline" style="margin-right: 6px;"></ion-icon>Delete</ion-button> -->
 
       </ion-item-group>
     </ion-list>
 
     <ion-list [inset]="true" class="locality-section">
       <ion-item-group class="locality-group">
-        <ion-item-divider lines="none" class="locality-divider" color="light">
+        <ion-item-divider lines="none" class="locality-divider">
           <ion-title class="locality-title">Locality</ion-title>
         </ion-item-divider>
         <ion-item class="locality-data-section">
