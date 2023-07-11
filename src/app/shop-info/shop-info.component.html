@@ -1,0 +1,40 @@
+<app-header
+  [header]="shopDetails.shopTitle"
+  (isNavigateBack)="navigateToBackPage($event)"
+>
+</app-header>
+
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-list [inset]="true" class="shop-detail-section">
+    <div class="image-section">
+      <div class="image">
+        <img
+        [ngSrc]="shopDetails.imageUrl"
+        class="shop-image"
+        width="auto"
+        height="auto"
+        [loading]="shopDetails.loadingBehaviour"
+        />
+      </div>
+    </div>
+
+    <ion-item lines="full">
+        <ion-label class="ion-text-wrap">
+          We Deliver to Demo only for chennai, Demo pincode - 111112
+          <div>
+            we have use sadkjakldjlksaj ksajdklsajdjsajdl ksajdlksaljd
+          </div>
+        </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <div class="d-flex flex-row justify-content-between">
+        <ion-button color="warning">View Catalogue</ion-button>
+        <ion-button (click)="navigateToMyShops()">Add to Market</ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

@@ -24,8 +24,13 @@ export const routes: Routes = [
     loadComponent: () => import('./dev-preview/dev-preview.component').then((c) => c.DevPreviewComponent)
   },
   {
+    path: 'shop-info/:shopDetails',
+    loadComponent: () => import('./shop-info/shop-info.component').then((c) => c.ShopInfoComponent)
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
-  }
+  },
+
 ];

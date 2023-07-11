@@ -1,0 +1,16 @@
+.ion-list-border-settings {
+  border: var(--light-border-color);
+  border-radius: 10px;
+}
+
+
+:host .shop-detail-section{
+  @extend .ion-list-border-settings;
+  .image-section{
+    margin: 0px;
+    .image{
+    border-radius: 10px;
+    margin: 16px;
+    }
+  }
+}
