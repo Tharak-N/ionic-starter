@@ -1,0 +1,40 @@
+
+:host .shops{
+  --ion-grid-column-padding: 5px;
+  box-shadow: none;
+  // background-color: aqua;
+  .card{
+    margin-inline: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    box-shadow: none;
+    // border: none;
+    // --bs-card-height: 200px;
+    --bs-card-border-color:none;
+    border: var(--light-border-color);
+    .notification-badge{
+      position:fixed;
+    }
+    // .card-image {
+    //   // width: 180px;
+    //   // height: 110px;
+    //   // object-fit: cover;
+    // }
+
+    .badges {
+      height: 25px;
+      width: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /*Dark theme settings*/
+    @media(prefers-color-scheme: dark){
+      background-color: var(--ion-card-background);
+      border: var(--dark-border-color);
+    }
+  }
+}
+
+

@@ -1,0 +1,18 @@
+.page-contents{
+  // margin-top: 80px;
+  position: relative;
+    .ion-list {
+      .ion-items {
+        border-radius: 10px;
+      }
+    }
+  .item-label {
+    font-weight: 400;
+    font-weight: bold;
+  }
+
+  .context{
+    font-size: 10px;
+    color: gray;
+  }
+}

@@ -1,0 +1,52 @@
+.ion-page{
+  .app-header{
+    /*Default color settings*/
+    --ion-toolbar-background: #0D47A1;
+    --ion-text-color: #ffffff;
+
+    /*Dark theme settings*/
+    @media (prefers-color-scheme: dark) {
+      --ion-toolbar-background: #5260ff;
+      --ion-text-color: #ffffff;
+    }
+    // @media (prefers-color-scheme: light) {
+    //   --ion-toolbar-background: #0e4699;
+    //   --ion-text-color: #ffffff;
+    // }
+    .app-title{
+      color: #ffffff;
+      font-size: 23px;
+    }
+  }
+
+  // #main-content{
+  //   .menu-toggle{
+  //     .menu-items{
+  //       .menu-label{
+  //         // margin-left: 20px;
+
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+
+.router-outlet {
+  margin-top: 50px;
+}
+
+.white-ripple{
+  color: #ffffff;
+}
+
+
+:host .icons {
+  margin-inline: 0px 14px;
+}
+
+:host .menu-toggle{
+  @media(prefers-color-scheme: dark){
+    --ion-item-background: var(--ion-background-color);
+  }
+}

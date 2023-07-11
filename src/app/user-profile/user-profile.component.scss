@@ -1,0 +1,131 @@
+// .user-profile-content {
+//   .user-profile-list {
+//     .profile-group {
+
+//     }
+//   }
+// }
+
+.ion-list-border-settings {
+  border: var(--light-border-color);
+  border-radius: 10px;
+}
+
+.dividers-settings {
+  padding-inline-start: 0px;
+  border-bottom: 0px;
+  --padding: 0px;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+:host .profile-group {
+  .profile-divider{
+    @extend .dividers-settings;
+    .profile-title{
+      padding-inline: 3px;
+    }
+  }
+  margin-bottom: 17px;
+}
+
+:host .user-profile-list{
+  @extend .ion-list-border-settings;
+  padding: 10px;
+  @media(prefers-color-scheme: dark){
+    border: var(--dark-border-color);
+  }
+
+  .profile-divider{
+    // background-color: none;
+    @media(prefers-color-scheme: dark){
+      --ion-background-color: none;
+    }
+    .profile-title {
+      @media(prefers-color-scheme: dark){
+        color: white;
+      }
+      color: black;
+    }
+  }
+}
+
+:host .user-address-section {
+  @extend .ion-list-border-settings;
+  padding: 10px;
+  .address-item{
+    --padding-start: 5px;
+  }
+  .address-divider {
+    @extend .dividers-settings;
+    @media(prefers-color-scheme: dark){
+      --ion-background-color: none;
+    }
+  }
+  .address-title{
+    padding-inline: 3px;
+    color: black;
+    @media(prefers-color-scheme: dark){
+      color: white;
+    }
+  }
+  margin-bottom: 17px;
+  @media(prefers-color-scheme: dark){
+    border: var(--dark-border-color);
+  }
+}
+
+
+:host .locality-section {
+  @extend .ion-list-border-settings;
+  padding: 10px;
+  .locality-divider{
+    @extend .dividers-settings;
+    @media(prefers-color-scheme: dark){
+      --ion-background-color: none;
+    }
+    .locality-title{
+      padding-inline: 3px;
+      color: black;
+      @media(prefers-color-scheme: dark){
+        color: white;
+      }
+    }
+  }
+  .locality-data-section {
+    --padding-start: 5px;
+    .near-by-location {
+      font-weight: 700;
+    }
+  }
+  // margin-bottom: 17px;
+  @media(prefers-color-scheme: dark){
+    border: var(--dark-border-color);
+  }
+}
+
+:host .others-section {
+  @extend .ion-list-border-settings;
+  @media(prefers-color-scheme: dark){
+    border: var(--dark-border-color);
+  }
+}
+
+// :host .user-profile-content{
+//   // --offset-bottom: 550px;
+//   // bottom: calc(var(--offset-bottom) * -1.9);
+//   .inner-scroll {
+//     bottom: calc(var(--offset-bottom) * 2.7);
+//   }
+// }
+
+:host .scroll-y {
+  bottom: calc(var(--offset-bottom) * 2.7);
+}
+
+
+// :host .radio-button{
+//   display: flex;
+//   align-items: start;
+
+// }

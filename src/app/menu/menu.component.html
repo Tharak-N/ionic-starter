@@ -1,0 +1,72 @@
+<div class="ion-page" id="main-content" #appHeader>
+  <ion-header [translucent]="true" class="app-header ion-no-border">
+    <ion-toolbar class="app-header-toolbar">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="1">
+            <ion-row class="ion-justify-content-start" style="margin-left: -10px;">
+              <ion-buttons class="ion-activatable ripple-parent circle">
+                <ion-menu-button></ion-menu-button>
+                <ion-ripple-effect type="unbounded" class="white-ripple"></ion-ripple-effect>
+              </ion-buttons>
+            </ion-row>
+          </ion-col>
+          <ion-col size="9">
+            <ion-title>
+              <!-- <span style="color:rgb(33, 33, 168); font-weight: 700; font-size: 24px;">GetMe</span>
+              <span style="color:orange; font-weight: 700; font-size: 24px;">Hub</span> -->
+              <span class="app-title">GetMe Hub</span>
+            </ion-title>
+          </ion-col>
+          <ion-col size="2">
+            <ion-row class="ion-justify-content-center">
+              <div class="ion-activatable ripple-parent circle">
+                <ion-icon name="notifications-outline" style="width: 24px; height:24px;" (click)="openNotification()"></ion-icon>
+                <ion-ripple-effect type="unbounded" class="white-ripple"></ion-ripple-effect>
+              </div>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+  <ion-router-outlet class="router-outlet"></ion-router-outlet>
+</div>
+
+<ion-menu contentId="main-content">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-item lines="none" class="p-0">
+        <div>
+          <img src="https://ionicframework.com/docs/img/demos/card-media.png" style="border-radius: 50%; object-fit:cover; width: 45px; height: 45px;"  />
+        </div>
+        <div class="d-flex flex-column p-3">
+          <div class="mb-0 margin-top: 5px;">
+            <ion-label style="font-size: 20px; font-weight: 700;">Welcome {{ userName }}</ion-label>
+          </div>
+          <!-- <ion-label>T Nagar, Chennai</ion-label> -->
+          <div>
+            <ion-label style="margin-top: -6px; color: grey;">{{ userLocation }}</ion-label>
+          </div>
+        </div>
+      </ion-item>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content >
+    <ion-menu-toggle *ngFor="let menu of menuOptions" class="ion-activatable ripple-parent menu-toggle">
+      <ion-item lines="full" class="menu-items" (click)="openMenu(menu.routeUrl)">
+        <!-- <i [class]="menu.icon"></i> -->
+        <ion-icon
+          [name]="menu.icon"
+          aria-hidden="true"
+          slot="start"
+          class="icons"
+        >
+          <!-- <ion-ripple-effect></ion-ripple-effect> -->
+        </ion-icon>
+        <ion-label class="menu-label">{{ menu.label }}</ion-label>
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>

@@ -1,1 +1,27 @@
+// .app-header {
+//   height: 20px;
+//   .app-header-toolbar{
+//     // background-color: burlywood;
+//   }
+// }
 
+.tab-navigation {
+  .fa-shop{
+    transform: scale(1.35);
+  }
+
+  .fa-cart-shopping{
+    transform: scale(1.35);
+  }
+
+  .fa-tag {
+    transform: scale(1.35);
+  }
+}
+
+
+:host .tab-navigation {
+  @media(prefers-color-scheme: dark){
+    background-color: #121212;
+  }
+}

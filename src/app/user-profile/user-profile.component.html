@@ -1,0 +1,109 @@
+
+<div class="user-profile-section">
+  <app-header
+    [header]="header"
+    (isNavigateBack)="navigateToBackPage($event)"
+  ></app-header>
+
+  <ion-content [fullscreen]="true" class="user-profile-content" color="light">
+
+    <ion-list [inset]="true" class="user-profile-list">
+      <ion-item-group class="profile-group">
+        <ion-item-divider lines="none" class="profile-divider">
+          <ion-title class="profile-title">Profile Info</ion-title>
+          <!-- <ion-label>Profile Info</ion-label> -->
+        </ion-item-divider>
+        <ion-input
+          label="Pincode"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Enter text"
+          class="pincode-input mt-3"
+          value="522006"
+          [disabled]="false"
+        ></ion-input>
+        <ion-input
+          label="Your Name"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Enter text"
+          class="name-input mt-4"
+        ></ion-input>
+      </ion-item-group>
+    </ion-list>
+
+
+    <ion-list [inset]="true" class="user-address-section">
+      <ion-item-group class="address-group">
+        <ion-item-divider lines="none" class="address-divider">
+            <ion-title class="address-title">Your Address</ion-title>
+        </ion-item-divider>
+
+        <ion-item class="address-item mt-3" lines="none" *ngFor="let address of userAddresses">
+            <div class="d-flex flex-row justify-content-between" style="width: 100%;">
+                <div  style="width: 20%;">
+                  <ion-radio></ion-radio>
+                </div>
+                <div style="width: 95%;">
+                  <ion-label class="address-label ion-text-wrap">{{ address.address }}</ion-label>
+                  <div>
+                    <ion-button class="tertiary mt-1" size="small"><ion-icon name="create-outline" style="margin-right: 6px;"></ion-icon>Edit</ion-button>
+                  </div>
+                </div>
+            </div>
+        </ion-item>
+
+        <!-- <ion-button class="primary mt-3" size="small"><ion-icon name="add" style="margin-right: 6px;"></ion-icon>Add</ion-button> -->
+        <ion-item lines="full" detail="true" class="mt-2">
+          <ion-label>Add Address</ion-label>
+        </ion-item>
+        <!-- <ion-button class="danger mt-3" size="small"><ion-icon name="trash-outline" style="margin-right: 6px;"></ion-icon>Delete</ion-button> -->
+
+      </ion-item-group>
+    </ion-list>
+
+    <ion-list [inset]="true" class="locality-section">
+      <ion-item-group class="locality-group">
+        <ion-item-divider lines="none" class="locality-divider">
+          <ion-title class="locality-title">Locality</ion-title>
+        </ion-item-divider>
+        <ion-item class="locality-data-section">
+          <ion-label class="ion-text-wrap">
+            <div>
+              Your Nearby location is -
+              <div class="near-by-location">
+                {{ nearByLocation }}
+              </div>
+            </div>
+            <div class="mt-2">
+              <ion-note class="ion-note">
+                Updating your location will help you in getting the proximity
+                of your vendors.To get current location tap here
+              </ion-note>
+            </div>
+        </ion-label>
+      </ion-item>
+      </ion-item-group>
+    </ion-list>
+
+    <ion-list [inset]="true" class="others-section">
+      <!-- <ion-item-group class="others-group"> -->
+        <ion-item class="others" *ngFor="let item of allToggleItems; index as i" lines="none">
+          <div class="d-flex flex-row justify-content-between" style="width: 100%;">
+            <div>{{ item.label }}</div>
+            <div style="width: 20%;">
+              <ion-toggle (click)="updateItem(item, i)"></ion-toggle>
+            </div>
+          </div>
+        </ion-item>
+      <!-- </ion-item-group> -->
+    </ion-list>
+
+    <div class="d-flex justify-content-end" style="padding-right: 17px;">
+      <ion-button class="">
+        Save Details
+      </ion-button>
+    </div>
+  </ion-content>
+
+</div>
