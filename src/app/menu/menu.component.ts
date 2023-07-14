@@ -100,5 +100,8 @@ export class MenuComponent  implements OnInit {
     this.router.navigate([routeUrl])
   }
 
+  menuToggle(event: any){
+    console.warn("event is", event)
+  }
 
 }

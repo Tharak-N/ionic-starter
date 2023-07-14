@@ -1,0 +1,14 @@
+<!-- <ion-content>
+  <ion-searchbar class="" placeholder="Serch here" style="--border-radius: 10px;"></ion-searchbar>
+</ion-content> -->
+
+
+<ion-modal [isOpen]="isSearchModalOpen">
+  <ng-template>
+  <ion-content class="ion-padding">
+    <div class="search-bar">
+      <ion-searchbar class="" disabled="false" placeholder="Serch here" style="--border-radius: 10px;"></ion-searchbar>
+    </div>
+  </ion-content>
+</ng-template>
+</ion-modal>

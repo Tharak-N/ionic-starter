@@ -1,0 +1,16 @@
+
+
+<ion-accordion [value]="section.sectionName" [id]="section.sectionName" expand="inset">
+  <ion-item slot="header">
+    <ion-label>
+      <ion-title> {{ section.sectionName }} </ion-title>
+    </ion-label>
+  </ion-item>
+  <div class="ion-padding" slot="content">
+    <!-- <ng-container *ngFor="let item of [1,2,3,4]; index as i"> -->
+      <ion-item lines="none" detail="true" *ngFor="let item of section.itemsList; index as i" [id]="i">
+        <ion-label>{{ item }}</ion-label>
+      </ion-item>
+    <!-- </ng-container> -->
+  </div>
+</ion-accordion>

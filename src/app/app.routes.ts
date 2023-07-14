@@ -28,6 +28,18 @@ export const routes: Routes = [
     loadComponent: () => import('./shop-info/shop-info.component').then((c) => c.ShopInfoComponent)
   },
   {
+    path: 'view-catalogue/:shopDetails',
+    loadComponent: () => import('./shop-catalogue/shop-catalogue.component').then((c) => c.ShopCatalogueComponent)
+  },
+  {
+    path: 'search-page',
+    loadComponent: () => import('./search-page/search-page.component').then((c) => c.SearchPageComponent)
+  },
+  {
+    path: 'nav-modals',
+    loadComponent: () => import('./nav-modals/nav-modals.component').then((c) => c.NavModalsComponent)
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'

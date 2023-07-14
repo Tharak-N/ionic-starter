@@ -20,10 +20,6 @@ export const TabRoutes: Routes = [
         loadComponent: () =>
           import('../tab3/tab3.page').then((m) => m.Tab3Page),
       },
-      {
-        path: 'shop-info',
-        loadComponent: () => import('../shop-info/shop-info.component').then((c) => c.ShopInfoComponent)
-      }
     ],
   },
   {

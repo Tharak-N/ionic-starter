@@ -4,6 +4,8 @@ import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from '../header/header.component';
 import { ShopDetails } from '../interfaces/interface';
 import { NgOptimizedImage } from '@angular/common';
+import { RemoteStateService } from '../services/remote-state.service';
+// import { InlineModalsComponent } from '../inline-modals/inline-modals.component';
 
 @Component({
   selector: 'app-shop-info',
@@ -19,7 +21,8 @@ export class ShopInfoComponent  implements OnInit {
   shopDetails!: ShopDetails ;
 
   private router = inject(Router);
-  private route = inject(ActivatedRoute)
+  private route = inject(ActivatedRoute);
+  private dataStore = inject(RemoteStateService);
 
   constructor() { }
 
@@ -45,6 +48,14 @@ export class ShopInfoComponent  implements OnInit {
 
   navigateToMyShops(){
     this.router.navigate(['tabs/my-shops'])
+  }
+
+  navigateToCatalogue(){
+    // this.router.navigate(['view-catalogue', JSON.stringify(this.shopDetails)])
+
+    this.dataStore.setShopCatalogueDetails(this.shopDetails)
+    this.dataStore.setModalRootComponent('shop-catalogue');
+    this.router.navigate(['nav-modals'])
   }
 
 }

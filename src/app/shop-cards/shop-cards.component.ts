@@ -2,22 +2,7 @@ import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-
-interface ShopDetails {
-  shopId: number
-  shopTitle: string,
-  shopSubTitle: string,
-  imageUrl: string,
-  loadingBehaviour: any,
-  contents: string | ShopContentDetails
-}
-
-interface ShopContentDetails{
-  imageUrl: string,
-  availability: string,
-  deliveryService: boolean,
-  offers: boolean,
-}
+import { ShopDetails } from '../interfaces/interface';
 
 @Component({
   selector: 'app-shop-cards',

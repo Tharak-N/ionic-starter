@@ -3,22 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from '../header/header.component';
 import { Router } from '@angular/router';
 import { ShopCardsComponent } from '../shop-cards/shop-cards.component';
-
-interface ShopDetails {
-  shopId: number,
-  shopTitle: string,
-  shopSubTitle: string,
-  imageUrl: string,
-  loadingBehaviour: any,
-  contents: string | ShopContentDetails
-}
-
-interface ShopContentDetails{
-  imageUrl: string,
-  availability: string,
-  deliveryService: boolean,
-  offers: boolean,
-}
+import { ShopDetails } from '../interfaces/interface';
 
 @Component({
   selector: 'app-fruits-vegetables',
