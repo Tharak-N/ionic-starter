@@ -1,3 +1,13 @@
-<div class="body">
-  <p>fruits</p>
-</div>
+<app-header
+  [header]="header"
+  (isNavigateBack)="navigateToBackPage($event)"
+></app-header>
+
+
+<ion-content [fullscreen]="true" color="light">
+  <app-shop-cards
+    [shopDetails]="shopDetails"
+  ></app-shop-cards>
+</ion-content>
+
+

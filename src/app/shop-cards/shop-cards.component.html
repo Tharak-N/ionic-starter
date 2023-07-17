@@ -1,0 +1,19 @@
+
+
+<ion-card *ngFor="let shop of shopDetails" (click)="openShopInfo(shop)">
+  <img
+    [ngSrc]="shop.imageUrl"
+    class="shop-image"
+    width="auto"
+    height="auto"
+    [loading]="shop.loadingBehaviour"
+  />
+  <ion-card-header>
+    <ion-card-title>{{ shop.shopTitle }}</ion-card-title>
+    <ion-card-subtitle>{{ shop.shopSubTitle }}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{ shop.contents }}
+  </ion-card-content>
+</ion-card>

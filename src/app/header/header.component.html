@@ -3,16 +3,19 @@
     <!-- <div class="d-flex align-items-center justify-content-start"> -->
       <ion-grid>
         <ion-row class="ion-align-items-center">
-          <ion-col size="2">
-            <ion-buttons class="ion-activatable ripple-parent circle back-action" (click)="navigateBack()">
+          <ion-col size="2" *ngIf="showBackArrow">
+
+            <ion-buttons class="ion-activatable ripple-parent circle back-action" (click)="navigateBack2()">
               <ion-icon name="arrow-back" class="arrow-back"></ion-icon>
               <ion-ripple-effect type="unbounded"></ion-ripple-effect>
             </ion-buttons>
+
+            <!-- <ion-back-button defaultHref="" (click)="navigateBack2()"></ion-back-button> -->
+
           </ion-col>
-          <ion-col>
-            <ion-title style="padding:0px;">{{ header }}</ion-title>
+          <ion-col size="10">
+              <ion-title style="padding:0px;">{{ header }}</ion-title>
           </ion-col>
-          <!-- </div> -->
         </ion-row>
       </ion-grid>
   </ion-toolbar>

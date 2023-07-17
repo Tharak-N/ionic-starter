@@ -13,8 +13,7 @@ export const TabRoutes: Routes = [
       },
       {
         path: 'browse-shops',
-        loadComponent: () =>
-          import('../tab2/tab2.page').then((m) => m.Tab2Page),
+        loadComponent: () => import('../tab2/tab2.page').then((m) => m.Tab2Page),
       },
       {
         path: 'offer-promos',
