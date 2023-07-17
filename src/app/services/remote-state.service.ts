@@ -9,7 +9,9 @@ export class RemoteStateService {
 
   constructor() { }
 
-  private modalRootComponent = new BehaviorSubject('hello tharak');
+  /**Root component for Ion Navigation Modal */
+  private modalRootComponent = new BehaviorSubject('');
+  /**Shop Catalogue details */
   private shopCatalogueDetails = new BehaviorSubject({});
 
   /**Set and get the root component for ion-nav stack */
