@@ -46,3 +46,21 @@ export const routes: Routes = [
   },
 
 ];
+
+
+// export const routes: Routes = [
+//   {
+//     path: 'vendor',
+//     loadChildren: (): any => void,
+//     canActivate: [
+//       () => false
+//     ]
+//   },
+//   {
+//     path: 'customer',
+//     loadChildren: (): any => void,
+//     canActivate: [
+//       () => true
+//     ]
+//   }
+// ]
